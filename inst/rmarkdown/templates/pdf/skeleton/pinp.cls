@@ -176,8 +176,8 @@
 %% Author and affiliation
 \RequirePackage{authblk}
 \setlength{\affilsep}{8.5pt} % 16.5pts between base of author line and base of affil line
-\renewcommand\Authfont{\color{color0}\normalfont\sffamily\bfseries\fontsize{9}{11}\selectfont}
-\renewcommand\Affilfont{\color{color0}\normalfont\sffamily\fontsize{7}{8}\selectfont}
+\renewcommand\Authfont{\color{color0}\normalfont\sffamily\bfseries\fontsize{12}{12}\selectfont}
+\renewcommand\Affilfont{\color{color0}\normalfont\sffamily\fontsize{10}{10}\selectfont}
 \makeatletter
 \renewcommand\AB@affilsepx{; \protect\Affilfont}
 \makeatother
@@ -236,10 +236,10 @@
 %% Bibliography    
 \RequirePackage{natbib}
 \setlength{\bibsep}{0.0pt}
-\renewcommand\bibfont{\normalfont\sffamily\fontsize{8}{10}\selectfont} % set font to be sans serif
+\renewcommand\bibfont{\normalfont\sffamily\fontsize{12}{12}\selectfont} % set font to be sans serif
 
 %% Figure caption style
-\DeclareCaptionFormat{pnasformat}{\normalfont\sffamily\fontsize{7}{9}\selectfont#1#2#3}
+\DeclareCaptionFormat{pnasformat}{\normalfont\sffamily\fontsize{12}{12}\selectfont#1#2#3}
 \captionsetup{format=pnasformat}
 
 %% Table style
