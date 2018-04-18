@@ -341,11 +341,11 @@
   {#1. }
   []
 \titleformat{\subsubsection}[runin]
-  {\sffamily\small\bfseries\itshape}
-  {\thesubsubsection.}
-  {0.5em}
-  {#1. }
-  []    
+  {\sffamily\small\bfseries\itshape} %%format
+  {\thesubsubsection.} %%label
+  {0.5em} %%sep
+  {#1. } %%before
+  [] %%after    
 \titleformat{\paragraph}[runin]
   {\sffamily\small\bfseries}
   {}
@@ -632,11 +632,11 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
   {0em}
   {#1}
   []  
-\titleformat{\subsection}[runin]
+\titleformat{\subsection}[display]
   {\sffamily\bfseries\color{pinpblue}} %\itshape}%
   {\thesubsection.}
   {0.5em}
-  {#1. }
+  {#1 }
   []
 % Other section headings left unchanged.
 
