@@ -250,9 +250,9 @@
 \setlength{\lightrulewidth}{0.5pt}
 \setlength{\aboverulesep}{1.5pt}
 \setlength{\belowrulesep}{1.5pt}
-\setlength{\belowbottomsep}{10pt}
+\setlength{\belowbottomsep}{14pt}
 \AtBeginEnvironment{tabular}{
-\sffamily\fontsize{7.5}{10}\selectfont
+\sffamily\fontsize{12}{14}\selectfont
 }
 \newcommand{\addtabletext}[1]{{\setlength{\leftskip}{9pt}\fontsize{7}{9}\selectfont#1}}
 

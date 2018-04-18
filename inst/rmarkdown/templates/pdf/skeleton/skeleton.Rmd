@@ -3,21 +3,17 @@ title: A Template for Two or One-Column Vignettes
 
 # Use letters for affiliations
 author:
-  - name: First Author
+  - name: Joseph Stachelek
     affiliation: a
-  - name: Second Author
-    affiliation: a,b
 address:
   - code: a
-    address: Institute of Smoke and Magic, University of Sometown, Sometown, XY, 12345
-  - code: b
-    address: Department of Neat Tricks, Whereever State University, Someplace, MC, 67890
+    address: Department of Fisheries and Wildlife, Michigan State University, East Lansing, MI, USA
 
 # For footer text  TODO(fold into template, allow free form two-authors)
-lead_author_surname: Author and Author
+lead_author_surname: Stachelek
 
 # Place DOI URL or CRAN Package URL here
-doi: "https://cran.r-project.org/package=YourPackage"
+# doi: "https://cran.r-project.org/package=YourPackage"
 
 # Abstract
 abstract: |
@@ -25,28 +21,21 @@ abstract: |
   An abstract should explain to the general reader the major contributions of the article. 
 
 # Optional: Acknowledgements
-acknowledgements: |
-  This template package builds upon, and extends, the work of the excellent
-  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
-  [PNAS LaTeX](http://www.pnas.org/site/authors/latex.xhtml) macros. Both these sources are
-  gratefully acknowledged as this work would not have been possible without them.  Our extensions
-  are under the same respective licensing term
-  ([GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html) and
-  [LPPL (>= 1.3)](https://www.latex-project.org/lppl/)).
+# acknowledgements: |
 
 # Optional: One or more keywords
-keywords:
-  - one
-  - two
-  - optional
-  - keywords
-  - here
+# keywords:
+#   - one
+#   - two
+#   - optional
+#   - keywords
+#   - here
 
 # Font size of the document, values of 9pt (default), 10pt, 11pt and 12pt
-fontsize: 9pt
+fontsize: 12pt
 
 # Optional: Force one-column layout, default is two-column
-#one_column: true
+one_column: true
 
 # Optional: Enables lineno mode, but only if one_column mode is also true
 #lineno: true
@@ -67,10 +56,10 @@ skip_final_break: true
 bibliography: pinp
 
 # Optional: Enable a 'Draft' watermark on the document
-watermark: true
+watermark: false
 
 # Customize footer, eg by referencing the vignette
-footer_contents: "YourPackage Vignette"
+# footer_contents: "YourPackage Vignette"
 
 # Produce a pinp document
 output: pinp::pinp
@@ -163,9 +152,12 @@ Markdown, Pandoc and LaTeX support `.eps` and `.pdf` files.
 Figures and Tables should be labelled and referenced in the standard way
 using the `\label{}` and `\ref{}` commands.
 
-The R examples above show how to insert a column-wide
-figure. To insert a figure wider than one column, please use the
-`\begin{figure*}...\end{figure*}` environment. 
+```{r }
+kableExtra::kable_styling(
+knitr::kable(head(mtcars), 
+         format = "latex", booktabs = TRUE, caption = "demo"), 
+         latex_options = "hold_position")
+```
 
 One (roundabout) way of doing this is to _not_ actually plot a figure, but to
 save it in a file as the following segment shows:
@@ -180,15 +172,6 @@ p <- ggplot(data = midwest,
 ## save to file
 suppressMessages(ggsave("densities.pdf", p))
 ```
-
-This file is then included via standard LaTeX commands.
-
-\begin{figure*}
-  \begin{center}
-    \includegraphics[width=0.66\textwidth, height=3.5in]{densities} 
-  \end{center}
-  \caption{Wide ggplot2 figure}\label{fig}
-\end{figure*}
 
 
 ## Typeset Code (But Do Not Run It) 
