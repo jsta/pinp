@@ -740,7 +740,6 @@ FUNCTION {format.btitle}
 { title "title" bibinfo.check
   duplicate$ empty$ 'skip$
     {
-      emphasize
     }
   if$
 }
@@ -1007,7 +1006,7 @@ FUNCTION {article}
   author format.key output
   format.date "year" output.check
   date.block
-  format.title "title" output.check
+  format.btitle "title" output.check
   new.block
   crossref missing$
     {
