@@ -4,7 +4,7 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,nat,nm-rvx,keyxyr,dt-beg,yr-par,note-yr,tit-qq,atit-u,trnum-it,vol-bf,volp-com,num-xser,pre-edn,isbn,issn,edpar,pp,ed,xedn,xand,etal-it,revdata,eprint,url,url-blk,doi,nfss')
+%% merlin.mbs  (with options: `ay,nat,nm-rvx,keyxyr,dt-beg,yr-par,note-yr,tit-qq,atit-u,trnum-it,vol-bf,volp-com,num-xser,pre-edn,isbn,edpar,pp,ed,xedn,xand,etal-it,revdata,eprint,url,url-blk,doi,nfss')
 %% 
 %% ** BibTeX style file for JSS publications (http://www.jstatsoft.org/)
 %% 
@@ -66,7 +66,6 @@ ENTRY
     howpublished
     institution
     isbn
-    issn
     journal
     key
     month
@@ -548,16 +547,6 @@ FUNCTION {format.isbn}
   if$
 }
 
-FUNCTION {format.issn}
-{ issn "issn" bibinfo.check
-  duplicate$ empty$ 'skip$
-    {
-      new.block
-      "ISSN " swap$ *
-    }
-  if$
-}
-
 FUNCTION {format.doi}
 { doi empty$
     { "" }
@@ -1032,7 +1021,6 @@ FUNCTION {article}
       format.pages output
     }
   if$
-  format.issn output
   format.doi output
   new.block
   format.note output
@@ -1190,7 +1178,6 @@ FUNCTION {inproceedings}
         }
       if$
       format.isbn output
-      format.issn output
     }
     { format.incoll.inproc.crossref output.nonnull
       format.pages output
@@ -1296,7 +1283,6 @@ FUNCTION {proceedings}
     }
   if$
   format.isbn output
-  format.issn output
   format.doi output
   new.block
   format.note output
